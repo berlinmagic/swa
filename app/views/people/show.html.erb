@@ -1,35 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="container_24">
 
-<p>
-  <b>Sex:</b>
-  <%= @person.sex %>
-</p>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @person.name %>
-</p>
+    <p>
+      <b>Sex:</b>
+      <%= @person.sex %>
+    </p>
 
-<p>
-  <b>First name:</b>
-  <%= @person.first_name %>
-</p>
+    <p>
+      <b>Name:</b>
+      <%= @person.name %>
+    </p>
 
-<p>
-  <b>Nick name:</b>
-  <%= @person.nick_name %>
-</p>
+    <p>
+      <b>First name:</b>
+      <%= @person.first_name %>
+    </p>
 
-<p>
-  <b>Birthday:</b>
-  <%= @person.birthday %>
-</p>
+    <p>
+      <b>Nick name:</b>
+      <%= @person.nick_name %>
+    </p>
 
-<p>
-  <b>Proffession:</b>
-  <%= @person.proffession %>
-</p>
+    <p>
+      <b>Birthday:</b>
+      <%= @person.birthday %>
+    </p>
+
+    <p>
+      <b>Proffession:</b>
+      <%= @person.proffession %>
+    </p>
 
 
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+    <%= link_to 'Edit', edit_person_path(@person) %> |
+    <%= link_to 'Back', people_path %>
+</div>

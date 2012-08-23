@@ -1,12 +1,70 @@
+@import "bourbon";
 @import "boiler1";
 
+@import "grid24";
 
 
 
+#headline { 
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 10px 0;
+	height: 20px;
+	background: #0b44cd;
+	
+	#magic_search {
+		width: 500px;
+	}
+}
 
 
-
-
+#magic_nav {
+	background: #fff;
+	border: 1px solid #ccc;
+	display: block;
+	padding: 5px;
+	@include border-radius( 0 0 3px 3px );
+	
+	#user_pic {
+		display: block;
+		width: 30px;
+		height: 30px;
+		float: left;
+		margin: 0 10px 0 0;
+		border: solid 1px #ccc;
+		@include border-radius( 3px );
+	}
+	#user_info {
+		max-width: 300px;
+		display: block;
+		float: left;
+		span {
+			display: block;
+			&.name { font-size: 15px; font-weight: bold; line-height: 17px;}
+			&.proffession { font-size: 13px; font-weight: normal; line-height: 15px; }
+		}
+	}
+	#user_navigation {
+		list-style:none;
+		display: block;
+		float:right;
+		padding: 0;
+		margin: 0;
+		li {
+			float: left;
+			display: block;
+			padding: 0; margin: 0;
+			border: solid 1px #ccc;
+			&:first-child { @include border-radius( 5px 0 0 5px ); }
+			&:last-child { @include border-radius( 0 5px 5px 0 ); }
+			a {
+				display: inline-block;
+				padding: 5px 15px;
+			}
+		}
+	}
+}
 
 
 
