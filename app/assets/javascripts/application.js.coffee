@@ -18,3 +18,9 @@ $ ->
 		$dialog.load( $(@).attr('href') )
 		$dialog.dialog(title: $(@).attr('title')).dialog('open')
 		false
+		
+	
+	$.datepicker.setDefaults({ dateFormat: 'yy-mm-dd' });
+	$("#user_birthday").datepicker
+		changeYear: true,
+		yearRange: "1920:1994"

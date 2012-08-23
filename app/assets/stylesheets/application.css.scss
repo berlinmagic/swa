@@ -3,6 +3,7 @@
 @import "boiler1";
 @import "grid24";
 @import "jquery.ui.all";
+@import "fonts";
 
 // # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -20,7 +21,8 @@ html, body {
 	background: #0b44cd;
 	
 	#magic_search {
-		width: 500px;
+		width: 300px;
+		float: right;
 	}
 	h1 {
 		font-size: 18px;
@@ -185,20 +187,25 @@ form.magic_login_form {
 		// float: left;
 		text-align: left;
 		display: inline-block;
-		padding: 2px 5px;
+		padding:0 5px;
 		margin: 0 0 0 10px;
 		@include border-radius( 3px );
 		border: solid 1px #ccc;
 		outline:none;
 	}
 	input[type="submit"] {
-		padding: 2px 5px;
+		padding: 0 5px;
 		text-size: 13px;
 		line-height: 18px;
 	}
 }
 
-
+#banner {
+	background: #444;
+	h2 {
+		color: #fff;
+	}
+}
 
 // # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 

@@ -1,0 +1,106 @@
+// F O N T S
+	$readFont: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	$bigFont: Tahoma, "Lucida Grande", Verdana, Arial, sans-serif;
+	$dekoFont: 'Georgia', garamond, serif;
+	
+	@mixin readFont { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+	@mixin bigFont { font-family: Tahoma, "Lucida Grande", Verdana, Arial, sans-serif; }
+	@mixin dekoFont { font-family: 'Georgia', garamond, serif; }
+
+	.osans {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+	
+		&.thin, .thin { font-weight: 300; }
+		&.regular, .regular { font-weight: 400; }
+		&.sbold, .sbold { font-weight: 600; }
+		&.bold, .bold { font-weight: 700; }
+		&.ebold, .ebold { font-weight: 800; }
+	}
+	@mixin osansThin {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+	}
+	@mixin osansRegular {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+	}
+	@mixin osansSemi {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+	}
+	@mixin osansBold {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 700;
+	}
+	@mixin osansExtra {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 800;
+	}
+	
+	@mixin eingabeText { 	font-family: $lucida-grande; 	}
+
+	@mixin profileText {
+		font-family: $lucida-grande; 
+		color: #333;
+		font-size: 12px;
+		line-height: 20px;
+	}
+// C S S - F O N T S 
+
+	@mixin titelText { 
+		@include osansSemi;
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	@mixin subTextSmall { 
+		@include osansRegular;
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+
+
+// H T M L 
+
+h2 {
+	@include osansBold;
+	line-height: 30px;
+	font-size: 20px;
+}
+
+h3 {
+	@include osansRegular;
+	line-height: 25px;
+	font-size: 18px;
+}
+
+h4 {
+	@include osansRegular;
+	line-height: 20px;
+	font-size: 14px;
+}
+
+h6 {
+	@include dekoFont;
+	line-height: 30px;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+p {
+	@include osansRegular;
+	line-height: 20px;
+	font-size: 12px;
+}
+
+label,
+input,
+button,
+textarea,
+select {
+	@include osansSemi;
+	line-height: 20px; 
+	font-size: 12px;
+}
