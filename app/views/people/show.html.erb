@@ -1,38 +1,99 @@
+<%= render "shared/user_nav" %>
+
 <div class="container_24">
-
-    <p id="notice"><%= notice %></p>
-
-    <p>
-      <b>Sex:</b>
-      <%= @person.sex %>
-    </p>
-
-    <p>
-      <b>Name:</b>
-      <%= @person.name %>
-    </p>
-
-    <p>
-      <b>First name:</b>
-      <%= @person.first_name %>
-    </p>
-
-    <p>
-      <b>Nick name:</b>
-      <%= @person.nick_name %>
-    </p>
-
-    <p>
-      <b>Birthday:</b>
-      <%= @person.birthday %>
-    </p>
-
-    <p>
-      <b>Proffession:</b>
-      <%= @person.proffession %>
-    </p>
-
-
-    <%= link_to 'Edit', edit_person_path(@person) %> |
-    <%= link_to 'Back', people_path %>
+    
+    <div class="grid_6">
+        <ul id="aside_nav">
+            <li><%= link_to "Allgemeine Informationen", '#', :class => "aktiv" %></li>
+            <li><%= link_to "Ausbildung & Arbeit", '#'%></li>
+            <li><%= link_to "Lebenslauf", '#'%></li>
+            <li><%= link_to "bearbeiten", edit_person_path(@person), :class => "dialog", :title => "Profil bearbeiten" %></li>
+        </ul>
+    </div>
+    
+    <div class="grid_18">
+        
+        <div class="market_box">
+            <div class="box_header">
+                Allgemeine Informationen
+            </div>
+            <table class="market">
+                <% if @person.sex && !@person.sex.blank? %>
+                    <tr>
+                        <th>Geschlecht</th>
+                        <td><%= t(@person.sex) %></td>
+                    </tr>
+                <% end %>
+                <% if @person.birthday && !@person.birthday.blank? %>
+                    <tr>
+                        <th>Geburtstag</th>
+                        <td><%= l @person.birthday %></td>
+                    </tr>
+                <% end %>
+                <% if @person.nick_name && !@person.nick_name.blank? %>
+                    <tr>
+                        <th>Spitzname</th>
+                        <td><%= @person.nick_name %></td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+        
+        <div class="market_box">
+            <div class="box_header">
+                Über mich
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+        
+        <div class="market_box">
+            <div class="box_header">
+                Adressdaten
+            </div>
+            <div class="half_box">
+                <div class="address_box">
+                    <div class="pic">
+                        <%= image_tag "torsten_50.png" %>
+                    </div>
+                    <div class="data">
+                        <strong><%= @person.full_name %></strong><br/>
+                        <% if @person.full_name == "Torsten Wetzel" %>
+                            Heinz-Kapelle-Str. 6 <br/>
+                            10407 Berlin <br/>
+                            Deutschland
+                        <% elsif @person.full_name == "Marco Sebald" %>
+                            Bornholmer Str. 9a <br/>
+                            10409 Berlin <br/>
+                            Deutschland
+                        <% end %>
+                    </div>
+                </div>
+                <div class="address_box">
+                    <div class="pic">
+                        <%= image_tag "owerk_50.png" %>
+                    </div>
+                    <div class="data">
+                        <strong>orangenwerk</strong><br/>
+                        Stralsunder Str. 20 <br/>
+                        16515 Oranienburg <br/>
+                        Deutschland
+                    </div>
+                </div>
+            </div>
+            <div class="half_box">
+                <%= image_tag "http://maps.google.com/maps/api/staticmap?size=330x200&sensor=false&zoom=16&markers=52.533260%2C13.440680" %>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        
+    </div>
+    <div class="clearfix"></div>
+    
 </div>

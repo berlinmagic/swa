@@ -1,7 +1,9 @@
 Swa::Application.routes.draw do
   resources :skills
 
-  resources :people
+  resources :people do
+    resources :skills
+  end
 
   #devise_for :users
   devise_for :users, 

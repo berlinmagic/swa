@@ -1,9 +1,10 @@
 class SkillsController < ApplicationController
-  # GET /skills
-  # GET /skills.json
+  
+  before_filter :get_person
+  
   def index
     @skills = Skill.all
-
+    @that_action = "skills"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @skills }
@@ -80,4 +81,13 @@ class SkillsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+private
+  
+  def get_person
+    if params[:person_id]
+      @person = Person.find( params[:person_id] )
+    end
+  end
+  
 end

@@ -1,0 +1,21 @@
+<%= render "shared/user_nav" %>
+
+<div class="container_24">
+    
+    <div class="grid_6">
+        <ul id="aside_nav">
+            <li><%= link_to "Allgemeine Informationen", '#', :class => "aktiv" %></li>
+            <li><%= link_to "Ausbildung & Arbeit", '#'%></li>
+            <li><%= link_to "Lebenslauf", '#'%></li>
+            <li><%= link_to "bearbeiten", edit_person_path(@person), :class => "dialog", :title => "Profil bearbeiten" %></li>
+        </ul>
+    </div>
+    
+    <div class="grid_18">
+        
+        <%= render %>
+        
+    </div>
+    <div class="clearfix"></div>
+    
+</div>

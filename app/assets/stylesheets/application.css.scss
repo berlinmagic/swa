@@ -74,6 +74,7 @@ html, body {
 			float: left;
 			display: block;
 			padding: 0; margin: 0;
+			background: #f2f1f0;
 			border: solid 1px #ccc;
 			&:first-child { @include border-radius( 5px 0 0 5px ); }
 			&:last-child { @include border-radius( 0 5px 5px 0 ); }
@@ -82,6 +83,11 @@ html, body {
 				padding: 5px 15px;
 				margin: 0;
 				text-decoration: none;
+				color: #333;
+				&.aktiv {
+					background: #0098ca;
+					color: #fff;
+				}
 			}
 		}
 	}
@@ -103,7 +109,7 @@ html, body {
 		a {
 			text-decoration: none;
 			display: block;
-			padding: 5px 10px;
+			padding: 10px 10px;
 			border-top: solid 1px #ccc;
 			border-bottom: solid 1px #ccc;
 			&.aktiv {
@@ -129,7 +135,40 @@ html, body {
 	border: solid 1px #ccc;
 	background: #fff;
 	padding: 10px;
+	margin: 0 0 20px;
 	@include border-radius( 5px );
+	.box_header {
+		@include osansThin;
+		color: #555;
+		text-shadow: 0 1px 1px #333;
+		padding: 0 5px 10px;
+	}
+	p {
+		@include osansThin;
+		color: #555;
+		padding: 0 5px 5px;
+	}
+	.half_box {
+		width: 50%;
+		float: left;
+		.address_box {
+			position: relative;
+			border-top: solid 1px #ccc;
+			border-bottom: solid 1px #ccc;
+			padding: 5px 0;
+			margin: 0 10px 0 0;
+			.pic {
+				width: 50px; height: 50px;
+				border: solid 1px #ccc;
+				float: left;
+				margin: 0 5px 0 0;
+			}
+			.data {
+				font-size: 11px;
+				line-height: 13px;
+			}
+		}
+	}
 }
 
 
@@ -177,6 +216,16 @@ table.form {
 		select {
 			width: auto;
 		}
+	}
+}
+table.market {
+	width: 400px;
+	text-align: left;
+	td, th { padding: 5px; }
+	th {
+		width: 150px;
+		color: #555;
+		font-weight: bold;
 	}
 }
 
