@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823114935) do
+ActiveRecord::Schema.define(:version => 20120823120003) do
 
   create_table "people", :force => true do |t|
     t.string   "sex"
@@ -23,6 +23,24 @@ ActiveRecord::Schema.define(:version => 20120823114935) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "skills", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "language"
+    t.string   "software"
+    t.string   "certificate"
+    t.string   "experience"
+    t.string   "level"
+    t.string   "scare_crop"
+    t.string   "panorama_crop"
+    t.string   "image_uid"
+    t.integer  "person_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "skills", ["person_id"], :name => "index_skills_on_person_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
