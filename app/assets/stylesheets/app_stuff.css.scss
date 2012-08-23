@@ -1,0 +1,83 @@
+// B A C K G R O U N D S
+	@mixin verlauf_A {
+		@include linear-gradient(#ffffff, #cccccc);
+	}
+
+	@mixin systemBG { 			background: #444444; 	}
+	@mixin systemBG_active { 	background: #222222; 	}
+
+	@mixin systemGradient {
+		@include linear-gradient(#444444, #222222);
+	}
+	@mixin systemGradient_dark {
+		@include linear-gradient(#212121, #121212);
+	}
+
+// I N P U T S
+	@mixin systemInput {
+		background: #333333;
+		@include box-shadow( inset 0 2px 2px 0 rgba(0,0,0,.50), 0 1px 0 0 rgba(255,255,255,.10) );
+		border: 0;
+		@include border-radius(2px);
+	}
+
+	@mixin profilInput {
+		background: #fff;
+		@include box-shadow( inset 0 2px 2px 0 rgba(0,0,0,.50), 0 1px 0 0 rgba(255,255,255,.10) );
+		border: 0;
+		@include border-radius(2px);
+	}
+
+
+// T E X T - S H A D O W S
+	@mixin whiteTextShadow { text-shadow: 0 1px 0px #fff; } // Projekte/Aufgaben
+	@mixin grayTextShadow { text-shadow: 0 1px 1px #999; }
+	@mixin blackTextShadow { text-shadow: 0 1px 0px #000; }
+
+	@mixin mpTextShadow { text-shadow: 0 1px 1px rgba(0,0,0,.99); }
+
+// B O X - S H A D O W S
+	@mixin systemShadow_soft {
+		@include box-shadow( inset 0 1px 0 0 rgba(0,0,0,.50), inset 0 -1px 0 0 rgba(255,255,255,.10) );
+	}
+
+	@mixin systemShadow( $top, $bot ) {
+		@include box-shadow( inset 0 1px 0 0 rgba(0,0,0,($top/100)), inset 0 -1px 0 0 rgba(255,255,255,($bot/100)) );
+	}
+
+	@mixin insetTopShadow( $top ) {
+		@include box-shadow( inset 0 1px 0 0 rgba( 255,255,255,($top/100) ) );
+	}
+
+	@mixin outsetShadow( $top, $bot ) {
+		@include box-shadow( inset 0 1px 0 0 rgba(255,255,255,($top/100)), inset 0 -1px 0 0 rgba(0,0,0,($bot/100)) );
+	}
+	@mixin insetShadow( $top, $bot ) {
+		@include box-shadow( inset 0 1px 0 0 rgba(0,0,0,($top/100)), inset 0 -1px 0 0 rgba(255,255,255,($bot/100)) );
+	}
+
+$shadowSoftWhiteTop: inset 0 1px 0 0 rgba( 255,255,255,.50);
+
+
+
+// H E L P E R
+	@mixin scareSize( $size ) {
+		width: #{ $size }px;
+		height: #{ $size }px;
+	}
+
+// C R O S S B R O W S E R
+	@mixin rotation( $rotate ) {
+		-moz-transform:rotate(#{ $rotate }deg);
+	    -webkit-transform:rotate(#{ $rotate }deg);
+	    -o-transform:rotate(#{ $rotate }deg);
+	    -ms-transform:rotate(#{ $rotate }deg);
+	    transform:rotate(#{ $rotate }deg);
+	}
+
+	@mixin elipse( $first, $second ) {
+		-webkit-border-radius: #{ $first }px / #{ $second }px;
+		-moz-border-radius: #{ $first }px / #{ $second }px;
+		-o-border-radius: #{ $first }px / #{ $second }px;
+		border-radius: #{ $first }px / #{ $second }px;
+	}

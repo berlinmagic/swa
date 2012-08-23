@@ -18,11 +18,15 @@ ActiveRecord::Schema.define(:version => 20120823120003) do
     t.string   "name"
     t.string   "first_name"
     t.string   "nick_name"
-    t.string   "birthday"
+    t.date     "birthday"
     t.string   "proffession"
+    t.text     "description"
+    t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  add_index "people", ["user_id"], :name => "index_people_on_user_id"
 
   create_table "skills", :force => true do |t|
     t.string   "name"

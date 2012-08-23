@@ -15,7 +15,17 @@
             <h1>berlinmagic</h1>
         </div>
         <div class="grid_16">
-            <input type="search" id="magic_search" />
+            <% if current_user %>
+                <input type="search" id="magic_search" />
+            <% else %>
+                <%= form_for(:user, :url => user_session_path, :html => {:class => "magic_login_form"}) do |f| %>
+                  <%= f.text_field :email, :placeholder => "Deine E-Mail:" %>
+                  <%= f.password_field :password, :placeholder => "Dein Passwort:" %>
+                  <%#= f.check_box :remember_me %>
+                  <%= f.submit 'Login' %>
+                  <div class="clearfix"></div>
+                <% end %>
+            <% end %>
         </div>
         
     </div>

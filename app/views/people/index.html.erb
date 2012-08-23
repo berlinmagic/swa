@@ -1,27 +1,31 @@
+<%= render "shared/user_nav" %>
+
 <div class="container_24">
     
-    <div class="grid_24">
-        <div id="magic_nav">
-            
-            <div id="user_pic">
-                X
-            </div>
-            
-            <div id="user_info">
-                <span class="name">Marco Sebald</span>
-                <span class="proffession">Gründer bei Berlinmagic</span>
-            </div>
-            
-            <ul id="user_navigation">
-                <li><%= link_to 'bla', '#' %></li>
-                <li><%= link_to 'bla', '#' %></li>
-                <li><%= link_to 'bla', '#' %></li>
-            </ul>
-            
-            <div class="clearfix"></div>
-        </div>
+    <div class="grid_6">
+        <ul id="aside_nav">
+            <li><%= link_to "Allgemeine Informationen", '#', :class => "aktiv" %></li>
+            <li><%= link_to "Ausbildung & Arbeit", '#'%></li>
+            <li><%= link_to "Lebenslauf", '#'%></li>
+        </ul>
     </div>
     
+    <div class="grid_18">
+        <div class="market_box">
+            <div class="box_header">
+                Info
+            </div>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    
+
     
 <h1>Listing people</h1>
 
@@ -56,5 +60,5 @@
 
 <br />
 
-<%= link_to 'New Person', new_person_path %>
+<%= link_to 'New Person', new_person_path, :class => "dialog", :title => "New Person" %>
 </div>
