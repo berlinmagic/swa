@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  language: MyString
+  software: MyString
+  certificate: MyString
+  experience: MyString
+  level: MyString
+  scare_crop: MyString
+  panorama_crop: MyString
+  image_uid: MyString
+
+two:
+  name: MyString
+  language: MyString
+  software: MyString
+  certificate: MyString
+  experience: MyString
+  level: MyString
+  scare_crop: MyString
+  panorama_crop: MyString
+  image_uid: MyString

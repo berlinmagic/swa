@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @skill.name %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @skill.language %>
+</p>
+
+<p>
+  <b>Software:</b>
+  <%= @skill.software %>
+</p>
+
+<p>
+  <b>Certificate:</b>
+  <%= @skill.certificate %>
+</p>
+
+<p>
+  <b>Experience:</b>
+  <%= @skill.experience %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @skill.level %>
+</p>
+
+<p>
+  <b>Scare crop:</b>
+  <%= @skill.scare_crop %>
+</p>
+
+<p>
+  <b>Panorama crop:</b>
+  <%= @skill.panorama_crop %>
+</p>
+
+<p>
+  <b>Image uid:</b>
+  <%= @skill.image_uid %>
+</p>
+
+
+<%= link_to 'Edit', edit_skill_path(@skill) %> |
+<%= link_to 'Back', skills_path %>

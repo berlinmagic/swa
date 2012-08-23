@@ -1,0 +1,53 @@
+<%= form_for(@skill) do |f| %>
+  <% if @skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@skill.errors.count, "error") %> prohibited this skill from being saved:</h2>
+
+      <ul>
+      <% @skill.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :language %><br />
+    <%= f.text_field :language %>
+  </div>
+  <div class="field">
+    <%= f.label :software %><br />
+    <%= f.text_field :software %>
+  </div>
+  <div class="field">
+    <%= f.label :certificate %><br />
+    <%= f.text_field :certificate %>
+  </div>
+  <div class="field">
+    <%= f.label :experience %><br />
+    <%= f.text_field :experience %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br />
+    <%= f.text_field :level %>
+  </div>
+  <div class="field">
+    <%= f.label :scare_crop %><br />
+    <%= f.text_field :scare_crop %>
+  </div>
+  <div class="field">
+    <%= f.label :panorama_crop %><br />
+    <%= f.text_field :panorama_crop %>
+  </div>
+  <div class="field">
+    <%= f.label :image_uid %><br />
+    <%= f.text_field :image_uid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
