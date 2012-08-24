@@ -27,22 +27,13 @@ a.workz { font-weight: bold; }
 	margin: 0;
 	padding: 10px 0;
 	height: 20px;
-	background: #0b44cd;
-	
+	// background: #0b44cd;
+	@include linear-gradient(#0099cc, #006699);
 	#magic_search {
 		width: 300px;
 		float: right;
 	}
-	h1 {
-		font-size: 18px;
-		color: #fff;
-		font-weight: bold;
-		display: block;
-		padding: 0;
-		margin: 0;
-		line-height: 20px;
-		text-shadow: 1px 0 1px #abb5cd;
-	}
+	h1 {}
 }
 
 
@@ -254,12 +245,24 @@ form.magic_login_form {
 	input[type="submit"] {
 		padding: 0 5px;
 		text-size: 13px;
-		line-height: 18px;
+		line-height: 20px;
+		border: solid 1px #333;
+		@include border-radius( 2px );
+		@include box-shadow( 0 1px 1px 0 rgba(255,255,255,.70), inset 0 1px 1px 0 rgba(255,255,255,.70), inset 0 -1px 1px 0 rgba(0,0,0,.30));
 	}
 }
 
 
 .image_holder {width: 338px; height: 180px;}
+
+#main_headline {
+	text-indent: -1000px;
+	overflow: hidden;
+	display: block;
+	width: 135px;
+	height: 22px;
+	background: transparent image-url("logo.png");
+}
 
 a.addAttribute { float: right; margin: 5px 30px 10px !important; display: block;}
 
