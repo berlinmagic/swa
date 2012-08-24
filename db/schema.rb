@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120824085932) do
+ActiveRecord::Schema.define(:version => 20120824090950) do
 
   create_table "people", :force => true do |t|
     t.string   "sex"
@@ -38,6 +38,22 @@ ActiveRecord::Schema.define(:version => 20120824085932) do
   end
 
   add_index "pics", ["owner_type", "owner_id"], :name => "index_pics_on_owner_type_and_owner_id"
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.string   "manufactor"
+    t.string   "product_type"
+    t.string   "usecase"
+    t.string   "requirements"
+    t.hstore   "data"
+    t.integer  "person_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "products", ["data"], :name => "index_products_on_data"
+  add_index "products", ["name"], :name => "index_products_on_name"
+  add_index "products", ["person_id"], :name => "index_products_on_person_id"
 
   create_table "services", :force => true do |t|
     t.string   "name"

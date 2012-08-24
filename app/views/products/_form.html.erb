@@ -1,0 +1,87 @@
+<%= form_for [@person, @product] do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <table class="form" id="products_form_table">
+      <tbody>
+    <tr>
+        <th><%= f.label :name %></th>
+        <td colspan="2"><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :manufactor %></th>
+        <td colspan="2"><%= f.text_field :manufactor %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :product_type %></th>
+        <td colspan="2"><%= f.text_field :product_type %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :usecase %></th>
+        <td colspan="2"><%= f.text_field :usecase %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :requirements %></th>
+        <td colspan="2"><%= f.text_field :requirements %></td>
+    </tr>
+    <%= f.fields_for :data, @product.data do |d| %>
+        <% @product.data.try(:each) do |key, value| %>
+            <tr>
+                <th><%= text_field_tag key, key, :class => 'text_field dynamicAttributeName' %></th>
+                <td><%= d.text_field key, :class => 'text_field', :value => value %></td>
+                <td><a herf='#' class='btn removeRow'>X</a></td>
+            </tr>
+        <% end %>
+    <%- end -%>
+    </tbody>
+  </table>
+  <%= f.hidden_field :person_id, :value => @person.id %>
+
+
+<table class="hidden muster_feld">
+    <tr>
+        <th><input class='text_field dynamicAttributeName' id='' name='' placeholder='Neues Attribut' size='30' type='text' /></th>
+        <td class="data_value"><input class='text_field' id='bar' name='' placeholder='value' size='30'  type='text'  /></td>
+        <td><a herf='#' class='btn removeRow'>X</a></td>
+    </tr>
+</table>
+
+<%= link_to 'Neue Eigenschaft anlegen', '#', :class => 'button addAttribute btn-primary' %>
+<div class="clearfix"></div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<script type='text/javascript'>
+
+    $("#products_form_table").on("keyup", '.dynamicAttributeName',  function(event){
+        nameElem  = $(this);
+        valueElem = nameElem.closest('tr').children('.data_value').children('.text_field');
+        value     = nameElem.val().toLowerCase();
+        valueElem.attr('id',          'product_data_' + value       );
+        valueElem.attr('name',        'product[data][' + value + ']');
+        valueElem.attr('placeholder', 'value for ' + value          );
+    });
+
+    $('.attributeContainer').delegate('.removeRow', 'click', function(){
+        console.log($(this).closest('.row'));
+        $(this).closest('tr').html('');
+    });
+
+    $('.addAttribute').on('click', function(){
+        $("#products_form_table").append( $('.muster_feld').html() );
+        console.log("clicked")
+    });
+</script>

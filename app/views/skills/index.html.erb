@@ -5,7 +5,8 @@
     
         <div class="grid_6">
             <ul id="aside_nav">
-                <li><%= link_to "Software", '#', :class => "aktiv" %></li>
+                <li><%= link_to "Ausbildung", '#', :class => "aktiv" %></li>
+                <li><%= link_to "Software", '#'%></li>
                 <li><%= link_to "Hardware", '#'%></li>
                 <li><%= link_to "Sprachen", '#'%></li>
                 <li><%= link_to "Sonstiges", '#'%></li>
@@ -23,30 +24,40 @@
                     </div>
                     <div class="half_box">
                         <table class="market">
+                            <% if skill.level && !skill.level.blank? %>
                             <tr>
                                 <th>Niveau</th>
                                 <td><%= skill.level %></td>
                             </tr>
+                            <% end %>
+                            <% if skill.experience && !skill.experience.blank? %>
                             <tr>
                                 <th>Erfahrung</th>
                                 <td><%= skill.experience %></td>
                             </tr>
+                            <% end %>
+                            <% if skill.certificate && !skill.certificate.blank? %>
                             <tr>
                                 <th>Zertifikate</th>
                                 <td><%= skill.certificate %></td>
                             </tr>
+                            <% end %>
+                            <% if skill.software && !skill.software.blank? %>
                             <tr>
                                 <th>Software</th>
                                 <td><%= skill.software %></td>
                             </tr>
+                            <% end %>
+                            <% if skill.hardware && !skill.hardware.blank? %>
                             <tr>
                                 <th>Hardware</th>
                                 <td><%= skill.hardware %></td>
                             </tr>
+                            <% end %>
                         </table>
                     </div>
                     <div class="half_box">
-                        <%= image_tag skill.image.thumb('338x180#').url() %>
+                        <%= image_tag skill.image.thumb('338x180#').url() if skill.image %>
                     </div>
                     <div class="clearfix"></div>
                 </div>

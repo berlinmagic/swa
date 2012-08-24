@@ -22,7 +22,7 @@
                         
                                 <div class="pix">
                                     <% person.skills.each do |skl| %>
-                                        <%= image_tag skl.image.thumb("208x150#").url, :class => "profile_preview_pic" %>
+                                        <%= image_tag skl.image.thumb("208x150#").url, :class => "profile_preview_pic" if skl.image %>
                                     <% end %>
                                 </div>
                                 <div class="pic_overlay">

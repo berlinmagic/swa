@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   layout proc { |controller| controller.request.xhr? ? false : 'application' }
   
-  helper_method :current_person
+  helper_method :current_person, :get_person
   
 private
   
@@ -16,6 +16,12 @@ private
       current_user.person
     else
       nil
+    end
+  end
+  
+  def get_person
+    if params[:person_id]
+      @person = Person.find( params[:person_id].split("-")[0].to_i )
     end
   end
   

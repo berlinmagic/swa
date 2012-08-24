@@ -1,0 +1,64 @@
+<%= render "shared/user_nav", :person => @person %>
+
+    <div class="container_24">
+    
+        <div class="grid_6">
+            <%= render "shared/resource_nav", :navon => "products" %>
+        </div>
+    
+        <div class="grid_18">
+        
+            <% @person.products.each do |pdt| %>
+                <div class="market_box">
+                    <div class="box_header">
+                        <%= pdt.name %>
+                        <%= link_to "+ Bild", new_product_pic_path(pdt), :class => "dialog right button", :title => "Bild-Upload" %>
+                        <%= link_to "edit", edit_person_product_path(@person, pdt), :class => "dialog right button", :title => "Skill '#{pdt.name}' bearbeiten" %>
+                    </div>
+                    <div class="half_box">
+                        <table class="market">
+                            <% if pdt.manufactor && !pdt.manufactor.blank? %>
+                            <tr>
+                                <th>Hersteller</th>
+                                <td><%= pdt.manufactor %></td>
+                            </tr>
+                            <% end %>
+                            <% if pdt.product_type && !pdt.product_type.blank? %>
+                            <tr>
+                                <th>Typ</th>
+                                <td><%= pdt.product_type %></td>
+                            </tr>
+                            <% end %>
+                            <% if pdt.usecase && !pdt.usecase.blank? %>
+                            <tr>
+                                <th>Anwendungen</th>
+                                <td><%= pdt.usecase %></td>
+                            </tr>
+                            <% end %>
+                            <% if pdt.requirements && !pdt.requirements.blank? %>
+                            <tr>
+                                <th>Vorraussetzungen</th>
+                                <td><%= pdt.requirements %></td>
+                            </tr>
+                            <% end %>
+                            <% pdt.data.try(:each) do |k,v| %>
+                                <tr>
+                                    <th><%= k.titleize %></th>
+                                    <td><%= v %></td>
+                                </tr>
+                            <% end %>
+                        </table>
+                    </div>
+                    <div class="half_box image_holder">
+                        <% pdt.pics.each do |pic| %>
+                            <%= image_tag pic.image.thumb('338x180#').url() %>
+                        <% end %>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            <% end %>
+        
+        </div>
+        <div class="clearfix"></div>
+    
+    </div>

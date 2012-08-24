@@ -3,12 +3,7 @@
     <div class="container_24">
     
         <div class="grid_6">
-            <ul id="aside_nav">
-                <li><%= link_to "Leistungen", '#', :class => "aktiv" %></li>
-                <li><%= link_to "Produkte", '#'%></li>
-                <li><%= link_to "Objekte", '#'%></li>
-                <li><%= link_to "New Service", new_person_service_path(@person), :class => "dialog", :title => "Neue Leistung anlegen" %></li>
-            </ul>
+            <%= render "shared/resource_nav", :navon => "service" %>
         </div>
     
         <div class="grid_18">
@@ -22,26 +17,42 @@
                     </div>
                     <div class="half_box">
                         <table class="market">
+                            <% if srv.level && !srv.level.blank? %>
                             <tr>
                                 <th>Niveau</th>
                                 <td><%= srv.level %></td>
                             </tr>
+                            <% end %>
+                            <% if srv.experience && !srv.experience.blank? %>
                             <tr>
                                 <th>Erfahrung</th>
                                 <td><%= srv.experience %></td>
                             </tr>
+                            <% end %>
+                            <% if srv.certificate && !srv.certificate.blank? %>
                             <tr>
                                 <th>Zertifikate</th>
                                 <td><%= srv.certificate %></td>
                             </tr>
+                            <% end %>
+                            <% if srv.software && !srv.software.blank? %>
                             <tr>
                                 <th>Software</th>
                                 <td><%= srv.software %></td>
                             </tr>
+                            <% end %>
+                            <% if srv.hardware && !srv.hardware.blank? %>
                             <tr>
                                 <th>Hardware</th>
                                 <td><%= srv.hardware %></td>
                             </tr>
+                            <% end %>
+                            <% if srv.price && !srv.price.blank? && srv.price != 0 %>
+                            <tr>
+                                <th>Preis</th>
+                                <td>ab <strong><%= number_to_currency srv.price %></strong> €/h</td>
+                            </tr>
+                            <% end %>
                         </table>
                     </div>
                     <div class="half_box image_holder">

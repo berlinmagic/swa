@@ -46,7 +46,7 @@ class SkillsController < ApplicationController
     respond_to do |format|
       if @skill.save
         if @skill.person
-          format.html { redirect_to @skill.person, notice: 'Skill was successfully created.' }
+          format.html { redirect_to [@skill.person, @skill.class], notice: 'Skill was successfully created.' }
         else
           format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
         end
@@ -66,7 +66,7 @@ class SkillsController < ApplicationController
     respond_to do |format|
       if @skill.update_attributes(params[:skill])
         if @skill.person
-          format.html { redirect_to @skill.person, notice: 'Skill was successfully updated.' }
+          format.html { redirect_to [@skill.person, @skill.class], notice: 'Skill was successfully updated.' }
         else
           format.html { redirect_to @skill, notice: 'Skill was successfully updated.' }
         end
@@ -90,12 +90,5 @@ class SkillsController < ApplicationController
     end
   end
   
-private
-  
-  def get_person
-    if params[:person_id]
-      @person = Person.find( params[:person_id] )
-    end
-  end
   
 end

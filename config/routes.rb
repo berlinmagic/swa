@@ -3,18 +3,27 @@ Swa::Application.routes.draw do
 
   
 
+  
+
   # resources :skills
 
   resources :people do
     resources :skills
     resources :services
     resources :pics
+    resources :products
   end
   
   resources :services do
     resources :pics
   end
-
+  
+  resources :products do
+    resources :pics
+  end
+  
+  resources :pics
+  
   #devise_for :users
   devise_for :users, 
               :path => "/", 

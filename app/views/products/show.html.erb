@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Manufactor:</b>
+  <%= @product.manufactor %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @product.product_type %>
+</p>
+
+<p>
+  <b>Usecase:</b>
+  <%= @product.usecase %>
+</p>
+
+<p>
+  <b>Requirements:</b>
+  <%= @product.requirements %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <% @product.data.try(:each) do |k,v| %>
+    <%= k %>: <%= v %><br/>
+  <% end %>
+  <%= @product.data %>
+</p>
+
+
+<% @product.data.try(:each) do |key, value| %>
+    <div class='row'>
+      <p class='span3'>
+        <%= key %>
+      </p>
+      <p class='span3'><%= value %></p>
+    </div>
+  <%- end -%>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

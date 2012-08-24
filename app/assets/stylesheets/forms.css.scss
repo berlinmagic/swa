@@ -33,6 +33,9 @@ table.form {
 		padding: 5px;
 	}
 	th { width: 200px; }
+	td {
+		input { width: 300px; }
+	}
 	input, textarea, select {
 		@include border-radius( 3px );
 		border: solid 1px #ccc;
@@ -40,7 +43,6 @@ table.form {
 		padding: 5px;
 		line-height: 18px;
 		background: #f2f1f0;
-		width: 300px;
 	}
 	label {
 		line-height: 28px;

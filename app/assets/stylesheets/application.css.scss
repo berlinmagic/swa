@@ -12,6 +12,12 @@ html, body {
 	color: #333;
 }
 
+a {
+	text-decoration: none;
+}
+
+a.workz { font-weight: bold; }
+
 @import "forms";
 @import "start";
 
@@ -255,7 +261,7 @@ form.magic_login_form {
 
 .image_holder {width: 338px; height: 180px;}
 
-
+a.addAttribute { float: right; margin: 5px 30px 10px !important; display: block;}
 
 #footer {
 	padding: 20px 0 50px;

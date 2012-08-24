@@ -5,6 +5,7 @@
 	}
 	#banner_content {
 		width: 950px; height: 336px;
+		display: block;
 		background: image-url("header_content.png");
 		margin: 17px auto 0;
 	}
@@ -16,7 +17,7 @@
 		margin: 0 auto;
 		background: transparent image-url("slogan.png") top center no-repeat;
 		width: 950px;
-		height: 132px;
+		height: 100px;
 		.slogan_tabs {
 			position: absolute;
 			bottom: 0; left: 0;

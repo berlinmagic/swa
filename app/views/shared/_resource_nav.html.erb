@@ -1,0 +1,10 @@
+<% navon ||= "service" %>
+<% that_pathes = { "service" => new_person_service_path(@person), "products" => new_person_product_path(@person) } %>
+<% that_titles = { "service" => "Neue Leistung anlegen", "products" => "Neues Produkt anlegen" } %>
+
+<ul id="aside_nav">
+    <li><%= link_to "Leistungen", person_services_path(@person), :class => "#{'aktiv' if navon == "service"}" %></li>
+    <li><%= link_to "Produkte", person_products_path(@person), :class => "#{'aktiv' if navon == "products"}" %></li>
+<!--    <li><%#= link_to "Objekte", '#', :class => "#{'aktiv' if navon == "objects"}" %></li> -->
+    <li><%= link_to that_titles[navon], that_pathes[navon], :class => "dialog", :title => that_titles[navon] %></li>
+</ul>

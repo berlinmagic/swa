@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  manufactor: MyString
+  type: 
+  usecase: MyString
+  requirements: MyString
+  data: 
+
+two:
+  manufactor: MyString
+  type: 
+  usecase: MyString
+  requirements: MyString
+  data: 
