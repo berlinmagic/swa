@@ -1,0 +1,24 @@
+<%= form_for [@owner,@pic] do |f| %>
+  <% if @pic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pic.errors.count, "error") %> prohibited this pic from being saved:</h2>
+
+      <ul>
+      <% @pic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table class="form">
+    <tr>
+        <th><%= f.label :image_uid, "Bild" %></th>
+        <td><%= f.file_field :image %></td>
+    </tr>
+  </table>
+  <%= f.hidden_field :owner_type, :value => @owner.class.to_s %>
+  <%= f.hidden_field :owner_id, :value => @owner.id %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -17,9 +17,9 @@
             </div>
             
             <ul id="user_navigation">
-                <li><%= link_to 'Informationen', person_path(@person), :class => "#{'aktiv' if @that_action && @that_action == 'info'}" %></li>
-                <li><%= link_to 'Skills', person_skills_path(@person), :class => "#{'aktiv' if @that_action && @that_action == 'skills'}" %></li>
-                <li><%= link_to 'Resourcen', '#', :class => "#{'aktiv' if @that_action && @that_action == 'resources'}" %></li>
+                <li><%= link_to 'Informationen', person_path(person), :class => "#{'aktiv' if @that_action && @that_action == 'info'}" %></li>
+                <li><%= link_to 'Skills', person_skills_path(person), :class => "#{'aktiv' if @that_action && @that_action == 'skills'}" %></li>
+                <li><%= link_to 'Resourcen', person_services_path(person), :class => "#{'aktiv' if @that_action && @that_action == 'resources'}" %></li>
                 <li><%= link_to 'Portfolio', '#', :class => "#{'aktiv' if @that_action && @that_action == 'portfolio'}" %></li>
                 <li><%= link_to 'Kontakte', '#', :class => "#{'aktiv' if @that_action && @that_action == 'contacts'}" %></li>
                 <li><%= link_to 'Bewertungen', '#', :class => "#{'aktiv' if @that_action && @that_action == 'xxx'}" %></li>

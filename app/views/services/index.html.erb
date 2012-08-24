@@ -1,0 +1,60 @@
+<%= render "shared/user_nav", :person => @person %>
+
+    <div class="container_24">
+    
+        <div class="grid_6">
+            <ul id="aside_nav">
+                <li><%= link_to "Leistungen", '#', :class => "aktiv" %></li>
+                <li><%= link_to "Produkte", '#'%></li>
+                <li><%= link_to "Objekte", '#'%></li>
+                <li><%= link_to "New Service", new_person_service_path(@person), :class => "dialog", :title => "Neue Leistung anlegen" %></li>
+            </ul>
+        </div>
+    
+        <div class="grid_18">
+        
+            <% @person.services.each do |srv| %>
+                <div class="market_box">
+                    <div class="box_header">
+                        <%= srv.name %>
+                        <%= link_to "+ Bild", new_service_pic_path(srv), :class => "dialog right button", :title => "Bild-Upload" %>
+                        <%= link_to "edit", edit_person_service_path(@person, srv), :class => "dialog right button", :title => "Skill '#{srv.name}' bearbeiten" %>
+                    </div>
+                    <div class="half_box">
+                        <table class="market">
+                            <tr>
+                                <th>Niveau</th>
+                                <td><%= srv.level %></td>
+                            </tr>
+                            <tr>
+                                <th>Erfahrung</th>
+                                <td><%= srv.experience %></td>
+                            </tr>
+                            <tr>
+                                <th>Zertifikate</th>
+                                <td><%= srv.certificate %></td>
+                            </tr>
+                            <tr>
+                                <th>Software</th>
+                                <td><%= srv.software %></td>
+                            </tr>
+                            <tr>
+                                <th>Hardware</th>
+                                <td><%= srv.hardware %></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="half_box image_holder">
+                        <% srv.pics.each do |pic| %>
+                            <%= image_tag pic.image.thumb('338x180#').url() %>
+                        <% end %>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            <% end %>
+        
+        </div>
+        <div class="clearfix"></div>
+    
+    </div>
+

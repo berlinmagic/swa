@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  image_uid: MyString
+  cropping: MyString
+  owner: MyString
+
+two:
+  image_uid: MyString
+  cropping: MyString
+  owner: MyString

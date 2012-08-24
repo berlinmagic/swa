@@ -1,9 +1,9 @@
 @import "bourbon";
-@import "app_stuff";
-@import "boiler1";
-@import "grid24";
+@import "basics/app_stuff";
+@import "basics/boiler1";
+@import "basics/grid24";
 @import "jquery.ui.all";
-@import "fonts";
+@import "basics/fonts";
 
 // # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -11,6 +11,9 @@ html, body {
 	background: #dfdfd7;
 	color: #333;
 }
+
+@import "forms";
+@import "start";
 
 #headline { 
 	position: relative;
@@ -94,6 +97,41 @@ html, body {
 }
 
 
+.profile_preview {
+	display:block;
+	background: #fff;
+	border: solid 1px #ccc;
+	padding: 5px;
+	@include border-radius( 3px );
+	text-decoration: none;
+	.pic {
+		width: 208px;
+		height: 150px;
+		position: relative;
+		.pic_overlay {
+			z-index: 10;
+			padding: 5px;
+			background: rgba(0,0,0,.5);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			.name {
+				display: block;
+				color: #fff;
+				text-shadow: 0 1px 1px #000;
+				font-weight: bold;
+			}
+			.proffession {
+				display: block;
+				color: #ccc;
+				text-shadow: 0 1px 1px #000;
+				font-weight: normal;
+			}
+		}
+		.pix { z-index: 0;}
+	}
+}
 
 
 #aside_nav {
@@ -151,9 +189,8 @@ html, body {
 		padding: 0 5px 5px;
 	}
 	a.right {
-		position: absolute;
-		right: 10px;
-		top: 10px;
+		float: right;
+		margin: 0 0 0 5px;
 		display: none;
 	}
 	&:hover {
@@ -183,63 +220,7 @@ html, body {
 }
 
 
-input[type="submit"], input[type="button"], a.button, a.red_button {
-	display:block; /* or inline-block */
-	@include border-radius( 3px );
-	margin: 0;
-	text-align: center;
-	text-decoration: none;
-	@include border-radius( 3px );
-	@include box-shadow( inset 0 0 3px 2px rgba(255,255,255,.42), inset 0 1px 0 0 rgba(255,255,255,.70), 0 2px 2px 0 rgba(0,0,0,.50) );
-	
-}
 
-a.button {
-	color: #333;
-	padding: 0 10px;
-	background: #dfdfd7;
-	border: solid 1px #ccc;
-}
-
-input[type="submit"] {
-	color: #fff !important;
-	font-size: 16px;
-	font-weight: bold;
-	padding: 5px 15px;
-	border: solid 1px #006699;
-	@include linear-gradient(#0099cc, #006699);
-}
-
-table.form {
-	width: 90%;
-	margin: 10px auto;
-	text-align: left;
-	th,td {
-		padding: 5px;
-	}
-	th { width: 200px; }
-	input, textarea, select {
-		@include border-radius( 3px );
-		border: solid 1px #ccc;
-		outline: none;
-		padding: 5px;
-		line-height: 18px;
-		background: #f2f1f0;
-		width: 300px;
-	}
-	label {
-		line-height: 28px;
-	}
-	select {
-		height: 28px;
-		width: 312px;
-	}
-	.date {
-		select {
-			width: auto;
-		}
-	}
-}
 table.market {
 	width: 400px;
 	text-align: left;
@@ -271,62 +252,18 @@ form.magic_login_form {
 	}
 }
 
-#banner {
-	background: image-url("banner_bg.jpg") repeat-x;
-	h2 {
-		color: #fff;
-	}
-	#banner_content {
-		width: 950px; height: 336px;
-		background: image-url("header_content.png");
-		margin: 17px auto 0;
-	}
-}
-#magic_slogan {
-	padding: 30px 0 0;
-	#slogan_content {
-		position: relative;
-		margin: 0 auto;
-		background: transparent image-url("slogan.png") top center no-repeat;
-		width: 950px;
-		height: 132px;
-		.slogan_tabs {
-			position: absolute;
-			bottom: 0; left: 0;
-			a {
-				display: block;
-				padding: 10px 20px;
-				float: left;
-			}
-		}
-	}
-}
-#start_tab {
-	display: block;
-	border-top: 1px solid #a3ad9a;
-	background: #fff;
-	#start_tab_content {
-		display: block;
-		width: 950px;
-		height: 265px;
-		margin: 0 auto;
-		background: transparent image-url("leistungen.png") center center no-repeat;
-	}
-}
-#bekannt_aus {
-	display: block;
-	height: 130px;
-	background: #e9e9e5 image-url("bekannt.png") center center no-repeat;
-	border-bottom: 1px solid #a3ad9a;
-}
+
+.image_holder {width: 338px; height: 180px;}
+
 
 
 #footer {
 	padding: 20px 0 50px;
 	text-align: center;
 	background: #fff;
+	a { text-decoration: none; }
 }
 
 // # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-@import "boiler2";
+@import "basics/boiler2";

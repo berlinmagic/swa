@@ -4,6 +4,8 @@ class Person < ActiveRecord::Base
   
   has_many :skills, :class_name => "Skill", :foreign_key => "person_id", :dependent => :destroy
   
+  has_many :services, :class_name => "Service", :foreign_key => "person_id", :dependent => :destroy
+  
   GENDERS = %w(male female)
   
   attr_accessible :birthday, :first_name, :name, :nick_name, :proffession, :sex

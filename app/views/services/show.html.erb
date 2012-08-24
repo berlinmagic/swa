@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @service.name %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @service.level %>
+</p>
+
+<p>
+  <b>Experience:</b>
+  <%= @service.experience %>
+</p>
+
+<p>
+  <b>Certificate:</b>
+  <%= @service.certificate %>
+</p>
+
+<p>
+  <b>Software:</b>
+  <%= @service.software %>
+</p>
+
+<p>
+  <b>Hardware:</b>
+  <%= @service.hardware %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @service.price %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Image uid:</b>
+  <%= @pic.image_uid %>
+</p>
+
+<p>
+  <b>Cropping:</b>
+  <%= @pic.cropping %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @pic.owner %>
+</p>
+
+
+<%= link_to 'Edit', edit_pic_path(@pic) %> |
+<%= link_to 'Back', pics_path %>

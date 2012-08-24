@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823120003) do
+ActiveRecord::Schema.define(:version => 20120824073659) do
 
   create_table "people", :force => true do |t|
     t.string   "sex"
@@ -27,6 +27,32 @@ ActiveRecord::Schema.define(:version => 20120823120003) do
   end
 
   add_index "people", ["user_id"], :name => "index_people_on_user_id"
+
+  create_table "pics", :force => true do |t|
+    t.string   "image_uid"
+    t.string   "cropping"
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "pics", ["owner_type", "owner_id"], :name => "index_pics_on_owner_type_and_owner_id"
+
+  create_table "services", :force => true do |t|
+    t.string   "name"
+    t.string   "level"
+    t.string   "experience"
+    t.string   "certificate"
+    t.string   "software"
+    t.string   "hardware"
+    t.decimal  "price",       :precision => 17, :scale => 2, :default => 0.0
+    t.integer  "person_id"
+    t.datetime "created_at",                                                  :null => false
+    t.datetime "updated_at",                                                  :null => false
+  end
+
+  add_index "services", ["person_id"], :name => "index_services_on_person_id"
 
   create_table "skills", :force => true do |t|
     t.string   "name"

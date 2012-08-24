@@ -1,63 +1,46 @@
-<%= render "shared/user_nav" %>
-
+<%#= render "shared/user_nav" %>
+<br/>
 <div class="container_24">
     
     <div class="grid_6">
         <ul id="aside_nav">
-            <li><%= link_to "Allgemeine Informationen", '#', :class => "aktiv" %></li>
-            <li><%= link_to "Ausbildung & Arbeit", '#'%></li>
-            <li><%= link_to "Lebenslauf", '#'%></li>
+            <li><%= link_to "Personen", '#', :class => "aktiv" %></li>
+            <li><%= link_to "Firmen", '#' %></li>
+            <li><%= link_to "Organisationen", '#'%></li>
         </ul>
     </div>
     
     <div class="grid_18">
-        <div class="market_box">
-            <div class="box_header">
-                Info
+        <div class="grid_box">
+            
+            <% Person.all.each do |person| %>
+            <div class="grid_6">
+                <a class="profile_preview" href="<%= person_path(person) %>">
+                    <% if person.skills.count > 0 %>
+                        
+                            <div class="pic">
+                        
+                                <div class="pix">
+                                    <% person.skills.each do |skl| %>
+                                        <%= image_tag skl.image.thumb("208x150#").url, :class => "profile_preview_pic" %>
+                                    <% end %>
+                                </div>
+                                <div class="pic_overlay">
+                                    <span class="name"><%= person.full_name %></span>
+                                    <span class="proffession"><%= person.proffession %></span>
+                                </div>
+                            </div>
+
+                    <% end %>
+                </a>
             </div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <% end %>
         </div>
+        
     </div>
     <div class="clearfix"></div>
     
 </div>
-    
-<h1>Listing people</h1>
-
-
-<table>
-  <tr>
-    <th>Sex</th>
-    <th>Name</th>
-    <th>First name</th>
-    <th>Nick name</th>
-    <th>Birthday</th>
-    <th>Proffession</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @people.each do |person| %>
-  <tr>
-    <td><%= person.sex %></td>
-    <td><%= person.name %></td>
-    <td><%= person.first_name %></td>
-    <td><%= person.nick_name %></td>
-    <td><%= person.birthday %></td>
-    <td><%= person.proffession %></td>
-    <td><%= link_to 'Show', person %></td>
-    <td><%= link_to 'Edit', edit_person_path(person) %></td>
-    <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
 <br />
 
-<%= link_to 'New Person', new_person_path, :class => "dialog", :title => "New Person" %>
