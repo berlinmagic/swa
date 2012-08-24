@@ -5,16 +5,52 @@
     
         <div class="grid_6">
             <ul id="aside_nav">
-                <li><%= link_to "Allgemeine Informationen", '#', :class => "aktiv" %></li>
-                <li><%= link_to "Ausbildung & Arbeit", '#'%></li>
-                <li><%= link_to "Lebenslauf", '#'%></li>
-                <li><%= link_to "bearbeiten", edit_person_path(@person), :class => "dialog", :title => "Profil bearbeiten" %></li>
+                <li><%= link_to "Software", '#', :class => "aktiv" %></li>
+                <li><%= link_to "Hardware", '#'%></li>
+                <li><%= link_to "Sprachen", '#'%></li>
+                <li><%= link_to "Sonstiges", '#'%></li>
+                <li><%= link_to "New Skill", new_person_skill_path(@person), :class => "dialog", :title => "Neuen Skill anlegen" %></li>
             </ul>
         </div>
     
         <div class="grid_18">
         
-            
+            <% @person.skills.each do |skill| %>
+                <div class="market_box">
+                    <div class="box_header">
+                        <%= skill.name %>
+                        <%= link_to "edit", edit_person_skill_path(@person, skill), :class => "dialog right button", :title => "Skill '#{skill.name}' bearbeiten" %>
+                    </div>
+                    <div class="half_box">
+                        <table class="market">
+                            <tr>
+                                <th>Niveau</th>
+                                <td><%= skill.level %></td>
+                            </tr>
+                            <tr>
+                                <th>Erfahrung</th>
+                                <td><%= skill.experience %></td>
+                            </tr>
+                            <tr>
+                                <th>Zertifikate</th>
+                                <td><%= skill.certificate %></td>
+                            </tr>
+                            <tr>
+                                <th>Software</th>
+                                <td><%= skill.software %></td>
+                            </tr>
+                            <tr>
+                                <th>Hardware</th>
+                                <td><%= skill.hardware %></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="half_box">
+                        <%= image_tag skill.image.thumb('338x180#').url() %>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            <% end %>
         
         </div>
         <div class="clearfix"></div>
@@ -44,9 +80,9 @@
         <td><%= skill.name %></td>
         <td><%= skill.language %></td>
         <td><%= skill.software %></td>
-        <td><%= skill.certificate %></td>
-        <td><%= skill.experience %></td>
-        <td><%= skill.level %></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td><%= skill.scare_crop %></td>
         <td><%= skill.panorama_crop %></td>
         <td><%= skill.image_uid %></td>

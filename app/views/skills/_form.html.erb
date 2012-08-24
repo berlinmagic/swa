@@ -10,43 +10,44 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <table class="form">
+    <tr>
+        <th><%= f.label :name %></th>
+        <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :level, "Niveau" %></th>
+        <td><%= f.text_field :level %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :experience, "Erfahrung" %></th>
+        <td><%= f.text_field :experience %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :certificate, "Zertifikate" %></th>
+        <td><%= f.text_field :certificate %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :software %></th>
+        <td><%= f.text_field :software %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :hardware %></th>
+        <td><%= f.text_field :hardware %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :image_uid %></th>
+        <td><%= f.file_field :image %></td>
+    </tr>
+  </table>
+  <%= f.hidden_field :person_id, :value => @person.id %>
+<!--
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%#= f.label :language %><br />
+    <%#= f.text_field :language %>
   </div>
-  <div class="field">
-    <%= f.label :language %><br />
-    <%= f.text_field :language %>
-  </div>
-  <div class="field">
-    <%= f.label :software %><br />
-    <%= f.text_field :software %>
-  </div>
-  <div class="field">
-    <%= f.label :certificate %><br />
-    <%= f.text_field :certificate %>
-  </div>
-  <div class="field">
-    <%= f.label :experience %><br />
-    <%= f.text_field :experience %>
-  </div>
-  <div class="field">
-    <%= f.label :level %><br />
-    <%= f.text_field :level %>
-  </div>
-  <div class="field">
-    <%= f.label :scare_crop %><br />
-    <%= f.text_field :scare_crop %>
-  </div>
-  <div class="field">
-    <%= f.label :panorama_crop %><br />
-    <%= f.text_field :panorama_crop %>
-  </div>
-  <div class="field">
-    <%= f.label :image_uid %><br />
-    <%= f.text_field :image_uid %>
-  </div>
+-->
   <div class="actions">
     <%= f.submit %>
   </div>

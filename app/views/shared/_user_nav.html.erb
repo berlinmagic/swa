@@ -4,7 +4,11 @@
         <div id="magic_nav">
             
             <div id="user_pic">
-                <%= image_tag "torsten_30.png", :width => 30, :height => 30 %>
+                <% if person.id == 1 %>
+                    <%= image_tag "torsten_30.png", :width => 30, :height => 30 %>
+                <% elsif person.id == 2 %>
+                    <%= image_tag "marco_30.png", :width => 30, :height => 30 %>
+                <% end %>
             </div>
             
             <div id="user_info">

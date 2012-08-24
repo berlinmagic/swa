@@ -1,4 +1,4 @@
-<%= render "shared/user_nav" %>
+<%= render "shared/user_nav", :person => @person %>
 
 <div class="container_24">
     
@@ -59,21 +59,27 @@
             </div>
             <div class="half_box">
                 <div class="address_box">
-                    <div class="pic">
-                        <%= image_tag "torsten_50.png" %>
-                    </div>
-                    <div class="data">
-                        <strong><%= @person.full_name %></strong><br/>
-                        <% if @person.full_name == "Torsten Wetzel" %>
-                            Heinz-Kapelle-Str. 6 <br/>
-                            10407 Berlin <br/>
-                            Deutschland
-                        <% elsif @person.full_name == "Marco Sebald" %>
-                            Bornholmer Str. 9a <br/>
-                            10409 Berlin <br/>
-                            Deutschland
-                        <% end %>
-                    </div>
+                    <% if @person.full_name == "Torsten Wetzel" %>
+                        <div class="pic">
+                            <%= image_tag "torsten_50.png" %>
+                        </div>
+                        <div class="data">
+                            <strong><%= @person.full_name %></strong><br/>
+                                Heinz-Kapelle-Str. 6 <br/>
+                                10407 Berlin <br/>
+                                Deutschland
+                        </div>
+                    <% elsif @person.full_name == "Marco Sebald" %>
+                        <div class="pic">
+                            <%= image_tag "marco_50.png" %>
+                        </div>
+                        <div class="data">
+                            <strong><%= @person.full_name %></strong><br/>
+                                Bornholmer Str. 9a <br/>
+                                10409 Berlin <br/>
+                                Deutschland
+                        </div>
+                    <% end %>
                 </div>
                 <div class="address_box">
                     <div class="pic">
@@ -88,7 +94,11 @@
                 </div>
             </div>
             <div class="half_box">
-                <%= image_tag "http://maps.google.com/maps/api/staticmap?size=330x200&sensor=false&zoom=16&markers=52.533260%2C13.440680" %>
+                <% if @person.full_name == "Torsten Wetzel" %>
+                    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=330x200&sensor=false&zoom=16&markers=52.533260%2C13.440680" %>
+                <% elsif @person.full_name == "Marco Sebald" %>
+                    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=330x200&sensor=false&zoom=16&markers=52.554440%2C13.411590" %>
+                <% end %>
             </div>
             <div class="clearfix"></div>
         </div>

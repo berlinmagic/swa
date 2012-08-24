@@ -45,7 +45,11 @@ class SkillsController < ApplicationController
 
     respond_to do |format|
       if @skill.save
-        format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
+        if @skill.person
+          format.html { redirect_to @skill.person, notice: 'Skill was successfully created.' }
+        else
+          format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
+        end
         format.json { render json: @skill, status: :created, location: @skill }
       else
         format.html { render action: "new" }
@@ -61,7 +65,11 @@ class SkillsController < ApplicationController
 
     respond_to do |format|
       if @skill.update_attributes(params[:skill])
-        format.html { redirect_to @skill, notice: 'Skill was successfully updated.' }
+        if @skill.person
+          format.html { redirect_to @skill.person, notice: 'Skill was successfully updated.' }
+        else
+          format.html { redirect_to @skill, notice: 'Skill was successfully updated.' }
+        end
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

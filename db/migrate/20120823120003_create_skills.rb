@@ -5,6 +5,7 @@ class CreateSkills < ActiveRecord::Migration
       t.text        :description
       t.string      :language
       t.string      :software
+      t.string      :hardware
       t.string      :certificate
       t.string      :experience
       t.string      :level

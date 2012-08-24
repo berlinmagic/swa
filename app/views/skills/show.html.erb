@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @skill.name %>
+  <b>Name:  <%= @skill.name %>
 </p>
 
 <p>
@@ -42,7 +41,7 @@
 
 <p>
   <b>Image uid:</b>
-  <%= @skill.image_uid %>
+  <%= image_tag @skill.image.url() %>
 </p>
 
 
