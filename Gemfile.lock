@@ -73,7 +73,7 @@ GEM
       jquery-rails
       railties (>= 3.1.0)
     json (1.7.5)
-    magic_recipes (0.0.21)
+    magic_recipes (0.0.25)
       capistrano (= 2.9.0)
       rails (~> 3.2.6)
     mail (2.4.4)
@@ -153,7 +153,7 @@ DEPENDENCIES
   dragonfly (~> 0.9.12)
   jquery-rails
   jquery-ui-rails
-  magic_recipes
+  magic_recipes (~> 0.0.25)
   pg (~> 0.14.0)
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)

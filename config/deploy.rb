@@ -84,7 +84,7 @@ after   "deploy:restart",   "deploy:cleanup"
 #   :assets, :db, :nginx, :postgresql, :private_pub, :rvm, :sqlite, :thin
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-magic_recipes :assets, :nginx, :postgresql, :rvm, :thin
+magic_recipes :assets, :db, :nginx, :postgresql, :rvm, :thin
 
 
 

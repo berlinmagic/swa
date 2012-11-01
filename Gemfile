@@ -50,7 +50,7 @@ gem "dragonfly", "~> 0.9.12"
 
 
 
-gem 'magic_recipes', :require => nil
+gem 'magic_recipes', "~> 0.0.25", :require => nil
 gem "thin"
 
 
