@@ -51,6 +51,7 @@ gem "dragonfly", "~> 0.9.12"
 
 
 gem 'magic_recipes', :require => nil
+gem "thin"
 
 
 
