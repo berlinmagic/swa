@@ -47,3 +47,10 @@ gem "dragonfly", "~> 0.9.12"
 
 # To use debugger
 # gem 'debugger'
+
+
+
+gem 'magic_recipes', :require => nil
+
+
+

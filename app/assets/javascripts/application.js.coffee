@@ -43,3 +43,20 @@ $ ->
 	#		changePic(@),
 	#		3000
 	#	)
+	
+	$("#products_form_table").on "keyup", ".dynamicAttributeName", (event) ->
+		nameElem = $(this)
+		valueElem = nameElem.closest("tr").children(".data_value").children(".text_field")
+		value = nameElem.val().toLowerCase()
+		valueElem.attr "id", "product_data_" + value
+		valueElem.attr "name", "product[data][" + value + "]"
+		valueElem.attr "placeholder", "value for " + value
+
+	$(".attributeContainer").delegate ".removeRow", "click", ->
+		$(this).closest("tr").html ""
+
+	$(".addAttribute").on "click", ->
+		$("#products_form_table").append $(".muster_feld").html()
+		console.log "clicked"
+		
+		

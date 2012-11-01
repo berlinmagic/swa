@@ -38,7 +38,7 @@
             <tr>
                 <th><%= text_field_tag key, key, :class => 'text_field dynamicAttributeName' %></th>
                 <td><%= d.text_field key, :class => 'text_field', :value => value %></td>
-                <td><a herf='#' class='btn removeRow'>X</a></td>
+                <td><a href='#' class='btn removeRow'>X</a></td>
             </tr>
         <% end %>
     <%- end -%>
@@ -51,7 +51,7 @@
     <tr>
         <th><input class='text_field dynamicAttributeName' id='' name='' placeholder='Neues Attribut' size='30' type='text' /></th>
         <td class="data_value"><input class='text_field' id='bar' name='' placeholder='value' size='30'  type='text'  /></td>
-        <td><a herf='#' class='btn removeRow'>X</a></td>
+        <td><a href='#' class='btn removeRow'>X</a></td>
     </tr>
 </table>
 
@@ -62,6 +62,7 @@
     <%= f.submit %>
   </div>
 <% end %>
+
 
 
 <script type='text/javascript'>
@@ -76,7 +77,6 @@
     });
 
     $('.attributeContainer').delegate('.removeRow', 'click', function(){
-        console.log($(this).closest('.row'));
         $(this).closest('tr').html('');
     });
 
