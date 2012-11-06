@@ -23,7 +23,7 @@ set :rvm_path,             '/usr/local/rvm'            #=> RVM-Path
 
 # nginx variables:
 set :rails_server,         'thin'                      #=> Rails-Server ( thin | passenger | unicorn )
-set :app_instances,        1                           #=> Server instances
+set :app_instances,        3                           #=> Server instances
 set :http_enabled_path,    '/opt/nginx/http-enabled'   #=> HTTP-folder (sites-enabled)
 # => set :tcp_enabled_path,     '/opt/nginx/tcp-enabled'    #=> TCP-folder (needs nginx_tcp_proxy_module)
 set :default_site,         false                       #=> Is this site the server default ?
@@ -59,7 +59,7 @@ set :postgresql_host,      "localhost"                     #=> postgres host
 set :postgresql_user,      "#{ app_name }"                 #=> postgres user
 set :postgresql_password,  "password"                      #=> postgres user password, if not set prompt will follow
 set :postgresql_database,  "#{ app_name }_#{ rails_env }"  #=> postgres db name
-set :postgresql_pool,      3                               #=> postgres pool
+set :postgresql_pool,      5                               #=> postgres pool
 
 
 # SqLite3 ... this is more for test & try pupose (save .sqlite and copy to current after deploy)
